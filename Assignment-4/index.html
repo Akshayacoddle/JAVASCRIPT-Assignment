@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Akshaya k">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .visible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="body" onkeypress="keyPress(event)">
+    <h1>Assignmrnt-4</h1>
+    <form action="#">
+        <label>First name <input id="key" type="text"></label>
+        <label>Last name <input id="value" type="text"></label>
+        <label>age <input id="age" type="text"></label>
+        <button onclick="submitOnCookies()">submit</button>
+        <div id="divRed" style="width: 400px;height: 400px; background-color: red;">
+            <p class="para">Name :Akshaya <br> Gender :femaile <br> Age :25</p>
+        </div>
+        <button onclick="hide()">Hide</button>
+        <button onclick="colorChange()">color-change</button>
+        <button onclick="showDetail()">details</button>
+        <label id="txtfield">Text field<input type="text" id="text"></label>
+        <button onclick="changeTabTitle()">click</button>
+        <select name="numbers" id="num" onchange="changevalue(this.selectedIndex)">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option id="5">5</option>
+            <option id="6">6</option>
+            <option id="7">7</option>
+            <option id="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <div id="divhover" style="width: 400px;height: 400px;"></div>
+    </form>
+    <p id="language"></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
