@@ -52,13 +52,13 @@ if (localStorage.getItem('name') === null) {
   // eslint-disable-next-line no-console
   console.log('novalue');
 } else {
-  const para = document.createElement('button');
-  const node = document.createTextNode('PrePopulate');
-  para.appendChild(node);
-  para.setAttribute('id', 'element');
+  const button = document.createElement('button');
+  const prebtn = document.createTextNode('PrePopulate');
+  button.appendChild(prebtn);
+  button.setAttribute('id', 'element');
   const element = document.getElementById('button');
-  element.appendChild(para);
-  para.addEventListener('click', () => {
+  element.appendChild(button);
+  button.addEventListener('click', () => {
     // eslint-disable-next-line no-restricted-globals
     event.preventDefault();
     document.getElementById('name').value = localStorage.getItem('name');
@@ -71,21 +71,21 @@ if (localStorage.getItem('name') === null) {
 /* 2 )Create a button and div using JS, when clicked on the button your basic details should be
 shown in the div.The static HTML file should only contain the basic HTML structure, no div/buttons.
 */
-const para2 = document.createElement('div');
-const node2 = document.createTextNode('');
-para2.appendChild(node2);
-para2.setAttribute('id', 'divelement');
+const div = document.createElement('div');
+const divnode = document.createTextNode('');
+div.appendChild(divnode);
+div.setAttribute('id', 'divelement');
 const divelement = document.querySelector('body');
-divelement.appendChild(para2);
+divelement.appendChild(div);
 document.getElementById('divelement').style.width = '300px';
 
-const para1 = document.createElement('button');
-const node1 = document.createTextNode('click to view detail');
-para1.appendChild(node1);
-para1.setAttribute('id', 'element2');
+const detailBtn = document.createElement('button');
+const view = document.createTextNode('click to view detail');
+detailBtn.appendChild(view);
+detailBtn.setAttribute('id', 'element2');
 const element2 = document.querySelector('body');
-element2.appendChild(para1);
-para1.addEventListener('click', () => {
+element2.appendChild(detailBtn);
+detailBtn.addEventListener('click', () => {
   document.getElementById('divelement').innerHTML = `Name: ${localStorage.getItem('name')} <br> Phone : ${localStorage.getItem('mobile')}  
   <br> Place : ${localStorage.getItem('place')} <br> company : ${localStorage.getItem('company')} <br> Pin : ${localStorage.getItem('pin')}`;
 });
