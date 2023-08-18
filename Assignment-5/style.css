@@ -1,0 +1,24 @@
+label {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+
+button {
+    background-color: rose;
+}
+
+input {
+
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    width: 200px;
+    height: 30px;
+}
+
+#pindiv,
+#namediv {
+    color: red;
+}

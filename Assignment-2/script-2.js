@@ -9,13 +9,12 @@ arr.forEach((value) => {
   console.log(value, typeof Number(value));
 });
 // c)  Remove last three items of the array
-arr.pop();
-arr.pop();
-arr.pop();
+for (let i = arr.length - 1; i >= 4; i -= 1) {
+  arr.pop();
+}
 // c) array after removing last 3
 console.log(arr);
-arr.unshift('two');
-arr.unshift('one');
+arr.unshift('one', 'two');
 // c) array after adding 1,2 at begining
 console.log(arr);
 // d) string concatenation of all items of the array
@@ -43,11 +42,14 @@ arr1.forEach((value) => {
 // g)Compare new array with the above given array if both have same data type
 const arrNew = [1, 2, '3', 4, 5, 6, '7'];
 const arrOld = ['1', '2', '3', '4', '5', '6', '7'];
-for (let i = 0; i < arrOld.length; i += 1) {
-  if (typeof arrNew[i] === typeof arrOld[i]) {
-    console.log(arrNew[i], typeof arrNew[i]);
+if (arrNew.length === arrOld.length) {
+  for (let i = 0; i < arrOld.length; i += 1) {
+    if (typeof arrNew[i] === typeof arrOld[i]) {
+      console.log(arrNew[i], typeof arrNew[i]);
+    }
   }
 }
+
 // h)  iterate the array and multiply its with index value console if result is greater than 40
 const array = [0, 2, 3, 7, 5, 6, 8];
 array.forEach((value, index) => {
