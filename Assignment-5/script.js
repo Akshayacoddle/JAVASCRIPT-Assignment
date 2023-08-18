@@ -3,6 +3,8 @@ function submitForm() {
   let Err = true;
   // eslint-disable-next-line no-restricted-globals
   event.preventDefault();
+  const regex = /^[1-9]\d{5}$/;
+  const regex1 = /^[1-9]\d{9}$/;
   const name = document.getElementById('name').value;
   const mobileNum = document.getElementById('mobile').value;
   const place = document.getElementById('place').value;
@@ -15,11 +17,20 @@ function submitForm() {
   const pinCodeId = document.getElementById('pin').id;
   /* a) if any of the fields are empty on submitting it should show
   corresponding error messages below all the required fields. */
-  if (mobileNum === '' || name === '' || place === '' || companyName === '') {
+  if (name === '' || place === '' || companyName === '') {
     // eslint-disable-next-line no-alert
     alert('below all the required fields! please fill it out');
     // d) store the details in the local storage and clear the form
+  } else if (regex1.test(mobileNum) === false) {
+    document.getElementById('pindiv').innerHTML = '';
+    document.getElementById('namediv').innerHTML = 'please enter valid number .must have 10-digit';
+  }
+  else if (regex.test(pinCode) === false) {
+    document.getElementById('namediv').innerHTML = '';
+    document.getElementById('pindiv').innerHTML = 'please enter valid 6-digit Pin';
   } else {
+    document.getElementById('namediv').innerHTML = '';
+    document.getElementById('pindiv').innerHTML = '';
     localStorage.setItem(nameId, name);
     localStorage.setItem(mobileNumId, mobileNum);
     localStorage.setItem(placeId, place);
@@ -28,24 +39,8 @@ function submitForm() {
     // eslint-disable-next-line no-undef
     form.reset();
   }
-  // b) pin code and mobile number fields should be integer
-  // c)The minimum length of the phone number should be 10
-  const regex1 = /^[1-9]\d{9}$/;
-  if (regex1.test(mobileNum) === false) {
-    document.getElementById('namediv').innerHTML = 'please enter valid number .must have 10-digit';
-  } else {
-    document.getElementById('namediv').innerHTML = '';
-    Err = false;
-  }
-  const regex = /^[1-9]\d{5}$/;
-  if (regex.test(pinCode) === false) {
-    document.getElementById('pindiv').innerHTML = 'please enter valid 6-digit Pin';
-  } else {
-    document.getElementById('pindiv').innerHTML = '';
-    // eslint-disable-next-line no-unused-vars
-    Err = false;
-  }
 }
+
 /* Make a prepopulate button, which when clicked will populate the form with values in the
  local storage if it exists, otherwise, the button will be disabled. */
 if (localStorage.getItem('name') === null) {
