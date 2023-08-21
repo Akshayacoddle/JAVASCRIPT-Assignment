@@ -9,11 +9,13 @@ arr.forEach((value) => {
   console.log(value, typeof Number(value));
 });
 // c)  Remove last three items of the array
+// do it with single operation
 for (let i = arr.length - 1; i >= 4; i -= 1) {
   arr.pop();
 }
 // c) array after removing last 3
 console.log(arr);
+// do it with single operation
 arr.unshift('one', 'two');
 // c) array after adding 1,2 at begining
 console.log(arr);
@@ -39,11 +41,21 @@ arr1.forEach((value) => {
     console.log(value);
   }
 });
+// Read the question carefully.
+// compare new array with old array
 // g)Compare new array with the above given array if both have same data type
 const arrNew = [1, 2, '3', 4, 5, 6, '7'];
 const arrOld = ['1', '2', '3', '4', '5', '6', '7'];
-if (arrNew.length === arrOld.length) {
-  for (let i = 0; i < arrOld.length; i += 1) {
+if (arrNew.length <= arrOld.length) {
+  const newLength = arrNew.length;
+  for (let i = 0; i < newLength; i += 1) {
+    if (typeof arrNew[i] === typeof arrOld[i]) {
+      console.log(arrNew[i], typeof arrNew[i]);
+    }
+  }
+} else {
+  const newLength = arrOld.length;
+  for (let i = 0; i < newLength; i += 1) {
     if (typeof arrNew[i] === typeof arrOld[i]) {
       console.log(arrNew[i], typeof arrNew[i]);
     }
