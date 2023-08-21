@@ -1,4 +1,5 @@
 // variables with different data types
+// check any data type is missing
 const name = 'akshaya';
 let middleName;
 const lastName = 'paloran';
@@ -6,9 +7,9 @@ const age = 25;
 const isCalculated = true;
 const passWord = null;
 const num = 9007199254740991n;
-const symbol = Symbol("foo");
+const symbol = Symbol('foo');
 const car = {
-  Name: 'Audi', model: '2023 Audi A6'
+  Name: 'Audi', model: '2023 Audi A6',
 };
 // data types along with each variable name in the console.
 /* eslint-disable no-console */
