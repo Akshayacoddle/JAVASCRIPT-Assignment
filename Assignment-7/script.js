@@ -1,3 +1,4 @@
+// Create a tic tac toe game in JS
 const numbtn = document.querySelectorAll('.child');
 let gameover = false;
 let totalmove = 0;
