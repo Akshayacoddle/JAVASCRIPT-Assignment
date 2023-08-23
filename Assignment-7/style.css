@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(#000000, #9198e5);
+    height: 710px;
+}
+
+h1 {
+    margin: 10px 550px;
+    font-family: 'Lobster', cursive;
+    text-shadow: 5px 0 #232931;
+    font-size: 50px;
+    color: #4ECCA3;
+}
+
+.parent {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.child {
+    font-size: 70px;
+    color: rgb(40, 83, 129);
+    width: 120px;
+    height: 110px;
+    background-color: white
+}
+
+#winner {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
