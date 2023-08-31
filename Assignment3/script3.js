@@ -1,23 +1,12 @@
 /* eslint-disable no-console */
-// 1) Use switch statement inside a map function and console each item
+// 1)Use switch statement inside a map function and console each item by using switch statement.
+// do with one case
 const array = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
 array.map((value, index) => {
   switch (index) {
-    case 0: console.log(value);
+    case index: console.log(value);
       break;
-    case 1: console.log(value);
-      break;
-    case 2: console.log(value);
-      break;
-    case 3: console.log(value);
-      break;
-    case 4: console.log(value);
-      break;
-    case 5: console.log(value);
-      break;
-    case 6: console.log(value);
-      break;
-    default: console.log('empty array');
+    default: console.log('array index out of bond');
       break;
   }
   return 0;
@@ -35,17 +24,25 @@ function parent() {
 const res = parent();
 const val = res();
 console.log(val);
-// 3) Use constructor method to console all elements of the passed array
-function Constructor(arrayCons) {
-  this.arrayCons = arrayCons;
-  arrayCons.forEach((element) => {
-    console.log(element);
-  });
+/* 3)Use constructor method to console all elements of the passed array.
+(the array will be passed to theconstructor method) */
+// method comes in class
+class ArrayItem {
+  constructor(arrayCons) {
+    this.arrayCons = arrayCons;
+    arrayCons.forEach((element) => {
+      console.log(element);
+    });
+  }
 }
 const arrayCons = [1, 2, 3, 4, 5, 6];
 // eslint-disable-next-line no-unused-vars
-const construct = new Constructor(arrayCons);
-// 4) Create a function that takes 2 arguments
+const arrayItem = new ArrayItem(arrayCons);
+// where is the full q?
+/* 4)Create a function that takes 2 arguments, 1st argument being any array of items, 2nd being
+any one of the item name either in the passed array or not in the passed array, the function
+should delete the passed item if it exists in the array, if it doesn't exist then the item
+should be inserted into the array, finnally console the output. */
 function checkingArrayItem(arr1, item) {
   let flag = 0;
   arr1.forEach((element) => {
@@ -80,7 +77,10 @@ const objectArray = {
   q: 'one',
 };
 console.log(Object.keys(objectArray).reverse());
-// 7) From the given object remove the data array item with id as '24'
+/* 7) { data: [{a:'one', id:'22'}, {a:'four', id:'7'}, {a:'six', b:'2'},  {a:'sixty', id:'24'},
+{a:'five', id:'212'}] } From the given object remove the data array item with id as '24'.
+(consider that the data arrays order will be different every time you get, so write code in
+  such a way that given any object it will remove the item with id as 24 if it exists ) */
 const data = [
   { a: 'one', id: '22' },
   { a: 'four', id: '7' },
@@ -115,8 +115,9 @@ console.log(string.split(' '));
 // h) Extract and print the words "is the King" from string.
 console.log(string.substring(string.indexOf('is'), string.indexOf('of')));
 // i) Get the count of occurrences of the strings "the" and "of" in string.
-console.log(string.match(/the/gi));
-console.log(string.match(/of/gi));
-// j) pad string with "*" and set the total length of the string as 30, displayed at right side.
-const string2 = 'Javascript is the King of';
+console.log(string.match(/the/gi).length);
+console.log(string.match(/of/gi).length);
+/* j) pad string with "*" and set the total length of the string as 30, displayed at right side.
+remove string using js not manually */
+const string2 = string.slice(0, 25);
 console.log(string2.padEnd(30, '*'));
