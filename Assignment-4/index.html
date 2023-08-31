@@ -19,14 +19,14 @@
     </style>
 </head>
 
-<body class="body" onkeypress="keyPress(event)">
+<body class="body" onload="checkCookie()">
     <h1>Assignmrnt-4</h1>
     <form action="#">
-        <label>First name <input id="key" type="text"></label>
-        <label>Last name <input id="value" type="text"></label>
+        <label>First name <input id="fname" type="text"></label>
+        <label>Last name <input id="lname" type="text"></label>
         <label>age <input id="age" type="text"></label>
         <button onclick="submitOnCookies()">submit</button>
-        <div id="divRed" style="width: 400px;height: 400px; background-color: red;">
+        <div id="divRed" style="width: 400px;height: 400px; background-color: green;">
             <p class="para">Name :Akshaya <br> Gender :femaile <br> Age :25</p>
         </div>
         <button onclick="hide()">Hide</button>

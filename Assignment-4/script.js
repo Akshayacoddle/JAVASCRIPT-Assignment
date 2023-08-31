@@ -6,10 +6,10 @@ const name = document.getElementsByName('author')[0];
 // c) To show a warning message if there is no https protocol used in the visited website.
 if (window.location.href.includes('http:')) {
   // eslint-disable-next-line no-alert
-  alert('site not secure');
+  alert('site contain http');
 } else {
   // eslint-disable-next-line no-alert
-  alert('secure');
+  alert('does not contain http');
 }
 // d) To show an alert message after 10sec while the page is refreshed.
 setTimeout(() => {
@@ -31,29 +31,38 @@ console.log(localStorage);
 /* 3) Create a form and submit button, on click of the
 button store your basic details from the form in the cookies. */
 const submitOnCookies = () => {
-  const fName = document.querySelector('#fname');
-  const lName = document.querySelector('#lname');
-  const age = document.querySelector('#age');
-  document.cookie = 'fname = fName.value;';
-  document.cookie = 'name = akshaya;';
+  const fName = document.querySelector('#fname').value;
+  const lName = document.querySelector('#lname').value;
+  const age = document.querySelector('#age').value;
+  document.cookie = `fname = ${fName};`;
+  document.cookie = `last = ${lName}`;
+  document.cookie = `age =${age}`;
 };
-document.cookie = 'name = akshaya;';
 // 4) Redirect to the homepage of google from the console.
-console.log(document.location.href = 'https://www.google.com/');
+// console.log(document.location.href = 'https://www.google.com/');
 // 5) Create a div with background color red, create buttons
 // eslint-disable-next-line no-unused-vars
+// 5a) to hide the div
 function hide() {
   document.querySelector('#divRed').style.visibility = 'hidden';
 }
 // eslint-disable-next-line no-unused-vars
+// 5b)to change the background color of the div
 function colorChange() {
   document.querySelector('#divRed').style.backgroundColor = 'blue';
 }
+// 5c) to show your basic details on the div, the details should hide/show, on the click.
 // eslint-disable-next-line no-unused-vars
 function showDetail() {
   document.querySelector('.para').classList.toggle('visible');
 }
-// 6) Create a select box with numbers 1 to 10,
+/* 6) Create a select box with numbers 1 to 10,  when selected 9, you should
+change the selection to 10 and show a message that "9 is fully occupied please
+select another number", when selected any number other than 9 it should show a
+message as "you selected 'particular number' " in a div, on hovering the div it
+should change the background color of the div into a highlighting shade, while the
+mouse pointer leaves the message area the background color should go back to as before
+(don't use CSS to attain the hovering functionality) */
 // eslint-disable-next-line no-unused-vars
 function changevalue(opt) {
   if (opt === 8) {
@@ -73,7 +82,9 @@ divhover.addEventListener('mouseout', () => {
   // eslint-disable-next-line no-undef
   divhover.style.backgroundColor = 'white';
 });
-// 7) Consider an array with names of 10 programming languages
+/* 7) Consider an array with names of 10 programming languages,
+make 10 buttons by iterating this array, when clicked on each button
+the name of the programming language should be shown in a corresponding div. */
 const array = ['C', 'C++', 'Java', 'Python', 'Ruby', 'Perl', 'PHP', 'javascript', 'sql', 'R'];
 array.forEach((element) => {
   const btn = document.createElement('button');
@@ -81,8 +92,11 @@ array.forEach((element) => {
   btn.setAttribute('id', element);
   document.body.appendChild(btn);
   const lanId = document.getElementById('language');
-  btn.addEventListener('click', () => {
-    lanId.innerHTML = element;
+  // eslint-disable-next-line func-names
+  btn.addEventListener('click', (event) => {
+    let e = this.event.srcElement.id;
+    console.log(e);
+    document.getElementById('language').innerHTML = e;
   });
 });
 
@@ -95,7 +109,7 @@ array.forEach((element) => {
 function changeTabTitle() {
   const text = document.querySelector('#text').value;
   if (text.length <= 50) {
-    document.querySelector('#txtfield').textContent = text;
+    document.title = text;
   } else {
     // eslint-disable-next-line no-alert
     alert('text exceed morethan 50 words');
@@ -103,8 +117,8 @@ function changeTabTitle() {
 }
 // 9) When the control+enter key is pressed show an alert message.
 // eslint-disable-next-line no-unused-vars
-function keyPress(event) {
+document.addEventListener('keydown', (event) => {
   if (event.keyCode === 13 && event.ctrlKey) {
-    console.log('Enter and cntrl key is pressed');
+    alert('Enter and cntrl key is pressed');
   }
-}
+});
