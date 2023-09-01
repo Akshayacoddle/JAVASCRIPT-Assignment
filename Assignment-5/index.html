@@ -9,16 +9,39 @@
 </head>
 
 <body>
-    <form action="" id="form">
-        <span id="button"></span>
-        <label for="">Name : <input type="text" id="name" placeholder="name"></label><span id="namediv"></span>
-        <label for="">Mobile : <input type="tel" placeholder="mobile" id="mobile"></label>
-        <span id="span"></span>
-        <label for="">Place : <input type="text" placeholder="place" id="place"></label>
-        <label for="">company : <input type="text" placeholder="company" id="company"></label>
-        <label for="">Pin-code : <input type="text" placeholder="pin-code" id="pin"></label><span id="pindiv"></span>
-        <button type="submit" onclick="submitForm(); return false;">Submit</button>
-    </form>
+    <div class="container">
+        <form id="form">
+            <h1>Registration</h1>
+            <span id="button"></span>
+            <div class="input-control">
+                <label for="">Name : </label>
+                <input type="text" id="name" placeholder="name">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="">Mobile : </label>
+                <input type="number" placeholder="mobile" id="mobile">
+                <span id="span"></span>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="">Place : </label>
+                <input type="text" placeholder="place" id="place">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="">company : </label>
+                <input type="text" placeholder="company" id="company">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="">Pin-code : </label><input type="number" placeholder="pin-code" id="pin">
+                <span id="pindiv"></span>
+                <div class="error"></div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 

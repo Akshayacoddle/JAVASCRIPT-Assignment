@@ -1,3 +1,11 @@
+#form {
+    width: 500px;
+}
+
+.btn {
+    margin: 50px 0;
+}
+
 label {
     display: flex;
     flex-direction: column;
@@ -5,9 +13,6 @@ label {
     justify-content: center;
 }
 
-button {
-    background-color: rose;
-}
 
 input {
 
@@ -18,7 +23,20 @@ input {
     height: 30px;
 }
 
-#pindiv,
-#namediv {
+.input-control.success input {
+    border-color: green;
+}
+
+.input-control.error input {
+    border-color: red;
+}
+
+.input-control .error {
+    color: red;
+    font-size: px;
+    height: 13px;
+}
+
+span {
     color: red;
 }
