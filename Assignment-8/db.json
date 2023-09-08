@@ -1,0 +1,22 @@
+{
+    "user": [
+        {
+            "id": 1,
+            "name": "Akshaya-k",
+            "email": "akshaya@april.biz",
+            "education": "MCA"
+        },
+        {
+            "id": 2,
+            "name": "Aparna-p",
+            "email": "aparna@april.biz",
+            "education": "MCA"
+        },
+        {
+            "id": 3,
+            "name": "Sanjay-kp",
+            "email": "Sanjaye@april.biz",
+            "education": "MSC"
+        }
+    ]
+}
