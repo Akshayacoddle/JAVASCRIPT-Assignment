@@ -1,4 +1,5 @@
 const numbtn = document.querySelectorAll('.child');
+console.log(numbtn);
 let gameover = false;
 let totalmove = 0;
 let player = 'X';
@@ -10,6 +11,7 @@ function restart() {
   setTimeout(restartGame, 5000);
 }
 function checkwinner() {
+  console.log('checking');
   // eslint-disable-next-line max-len
   const child0 = numbtn[0].innerHTML;
   const child1 = numbtn[1].innerHTML;
@@ -55,22 +57,25 @@ function checkwinner() {
   }
 }
 numbtn.forEach((num) => {
-  num.addEventListener('click', () => {
+  num.addEventListener('click', (ele) => {
+    console.log(ele.target);
     if (gameover || num.innerText !== '') return;
     // eslint-disable-next-line no-param-reassign
     num.innerText = player;
     totalmove += 1;
-    checkwinner();
+    if (totalmove > 4) {
+      checkwinner();
+    }
+
     if (!gameover && totalmove < 9) {
       if (player === 'X') {
         // eslint-disable-next-line no-param-reassign
-        num.innerText = 'X';
         player = 'O';
       } else {
         // eslint-disable-next-line no-param-reassign
-        num.innerText = 'O';
         player = 'X';
       }
+      console.log(ele.target.innerHTML);
     } else if (totalmove === 9 && !gameover) {
       document.querySelector('h1').innerHTML = "It's a Draw!";
       gameover = true;

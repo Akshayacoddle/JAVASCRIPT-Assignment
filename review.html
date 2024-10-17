@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>querySelector vs querySelectorAll</title>
+</head>
+
+<body>
+
+    <p id="p1">This is the first <span>paragraph.</span>
+
+        <a href=""> hello</a>
+
+    </p>
+    <p id="p2" class="para">This is the second paragraph.</p>
+    <p id="p3" class="para">This is the third paragraph.</p>
+    <p id="p4" class="para">This is the first paragraph.</p>
+    <p id="p5" class="para">This is the forth paragraph.</p>
+    <p id="p6" class="para">This is the paragraph.</p>
+    <input type="text" class="inputField" value="Field 1">
+    <input type="text" class="inputField" value="Field 2">
+    <input type="text" class="inputField" value="Field 3">
+    <input type="text" class="inputField" value="Field 4">
+    <input type="text" class="inputField" value="Field 5">
+
+    <script>
+        /* var i = 0;
+        for (i = 0; i < 5; i++) {
+
+            alert(i)
+
+        }
+        alert(i)
+        document.getElementsByTagName("input, span").style.color = 'red';
+
+        var thirdInputValue = document.querySelectorAll('.inputField')[2].value;
+        console.log(thirdInputValue);
+
+        var thirdInputValue = document.getElementsByClassName('inputField')[2].value;
+        console.log(thirdInputValue);
+
+        var thirdInputValue = document.querySelector('input:nth-child(3)').value;
+        console.log(thirdInputValue);
+         const elements = document.querySelector('p');
+ 
+         let ptag = document.querySelectorAll('p');
+         for (let i = 0; i < ptag.length; i++) {
+             console.log(ptag[i]);
+ 
+         }
+         ptag.forEach(element => {
+             console.log(element.innerText);
+         });
+         var input = document.getElementById("p3").getAttribute('class');
+ 
+         // Outputs:
+         // This is the first paragraph.
+         // This is the second paragraph.
+         // This is the third paragraph.*/
+
+        const list = document.querySelectorAll("input, span");
+        for (let i = 0; i < list.length; i++) {
+            list[i].style.backgroundColor = "red";
+        }
+        function check(b) {
+
+            b.array.forEach(element => {
+                if (Array.isArray(element)) {
+                    check(element)
+                }
+                else {
+                    console.log(element);
+                }
+            });
+            check(b)
+        }
+    </script>
+
+</body>
+
+</html>

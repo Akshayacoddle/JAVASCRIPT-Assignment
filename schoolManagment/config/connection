@@ -1,0 +1,16 @@
+
+const mysql = require("mysql");
+
+const conn = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database: "school_management"
+});
+
+conn.connect(function (err) {
+    if (err) throw err;
+    console.log('connection establishes');
+});
+
+module.exports = { conn };

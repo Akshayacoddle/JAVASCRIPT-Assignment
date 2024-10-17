@@ -19,11 +19,12 @@ function parent() {
     arrayClosure.splice(arrayClosure.indexOf(2), 1);
     return arrayClosure;
   }
+  console.log(child);
   return child;
 }
 const res = parent();
 const val = res();
-console.log(val);
+console.log('gggggggggggg' + val);
 /* 3)Use constructor method to console all elements of the passed array.
 (the array will be passed to theconstructor method) */
 // method comes in class

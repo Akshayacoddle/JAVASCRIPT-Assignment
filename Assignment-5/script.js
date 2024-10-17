@@ -52,7 +52,8 @@ const validateInput = () => {
   const placeValue = place.value.trim();
   const companyValue = company.value.trim();
   const pinValue = pin.value.trim();
-
+  console.log(nameValue);
+  console.log(name.val());
   if (nameValue === '') {
     setError(name, 'username is required');
     errName = false;
